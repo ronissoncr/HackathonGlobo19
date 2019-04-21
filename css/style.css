@@ -1,0 +1,29 @@
+body{
+	
+	background-color: #111111;
+}
+
+.conteudo{
+	width: 364pt;
+	height: 160pt;
+
+}
+
+.textopag1{
+	color: white;
+
+}
+
+.textopag2{
+	color: white;
+}
+
+.texto_final{
+	color: white;
+}
+
+.redes_sociais{
+	background-color: red;
+	position: absolute;
+	top: 600px;
+}
