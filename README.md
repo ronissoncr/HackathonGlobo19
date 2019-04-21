@@ -1,91 +1,217 @@
-<p align="center">
-  <a href="http://materializecss.com/">
-    <img src="http://materializecss.com/res/materialize.svg" width="150">
-  </a>
-</p>
+# Hackathon Globo - Grupo 3 - Captive Portal GloboPlay
 
-<h3 align="center">MaterializeCSS</h3>
 
-<p align="center">
-  Materialize, a CSS Framework based on material design.
-  <br>
-  <a href="http://materializecss.com/"><strong>-- Browse the docs --</strong></a>
-  <br>
-  <br>
-  <a href="https://travis-ci.org/Dogfalo/materialize">
-    <img src="https://travis-ci.org/Dogfalo/materialize.svg?branch=master" alt="Travis CI badge">
-  </a>
-  <a href="https://badge.fury.io/js/materialize-css">
-    <img src="https://badge.fury.io/js/materialize-css.svg" alt="npm version badge">
-  </a>
-  <a href="https://cdnjs.com/libraries/materialize">
-    <img src="https://img.shields.io/cdnjs/v/materialize.svg" alt="CDNJS version badge">
-  </a>
-  <a href="https://david-dm.org/Dogfalo/materialize">
-    <img src="https://david-dm.org/Dogfalo/materialize/status.svg" alt="dependencies Status badge">
-    </a>
-  <a href="https://david-dm.org/Dogfalo/materialize#info=devDependencies">
-    <img src="https://david-dm.org/Dogfalo/materialize/dev-status.svg" alt="devDependency Status badge">
-  </a>
-  <a href="https://gitter.im/Dogfalo/materialize">
-    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter badge">
-  </a>
-</p>
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](#)
 
-## Table of Contents
-- [Quickstart](#quickstart)
-- [Documentation](#documentation)
-- [Supported Browsers](#supported-browsers)
-- [Changelog](#changelog)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Copyright and license](#copyright-and-license)
+Captive Portal GloboPlay é um projeto desenvolvido no Hackathon Globo 2019 usando as tecnologias e ferramentas.
 
-## Quickstart:
-Read the [getting started guide](http://materializecss.com/getting-started.html) for more information on how to use materialize.
+*       Rede Wireless;
+*   	Sistema Operacional CentOS 7;
+*   	Captive Portal: projeto original disponivel em [public repository][https://github.com/zoilomora/captive-portal]on GitHub. 
+*       [HTML] - linguagem de marcação web;
+*       [PHP] - linguagem interpretada livre;
+*       [CSS] - Mecanismo para adicionar estilo a um documento web;
+*       [MySql] - sistema de gerenciamento de banco de dados;
+ *       [Visual Code] - editor de código-fonte desenvolvido pela  [Microsoft] 
+*       [Adobe XD](https://www.adobe.com/br/products/xd.html) - ferramenta de prototipação
 
-- [Download the latest release](https://github.com/Dogfalo/materialize/releases/latest) of materialize directly from GitHub. ([Beta](https://github.com/Dogfalo/materialize/releases/))
-- Clone the repo: `git clone https://github.com/Dogfalo/materialize.git` (Beta: `git clone -b v1-dev https://github.com/Dogfalo/materialize.git`)
-- Include the files via [cdnjs](https://cdnjs.com/libraries/materialize). More [here](http://materializecss.com/getting-started.html). ([Beta](https://cdnjs.com/libraries/materialize/1.0.0-beta))
-- Install with [npm](https://www.npmjs.com): `npm install materialize-css` (Beta: `npm install materialize-css@next`)
-- Install with [Bower](https://bower.io): `bower install materialize` ([DEPRECATED](https://bower.io/blog/2017/how-to-migrate-away-from-bower/))
-- Install with [Atmosphere](https://atmospherejs.com): `meteor add materialize:materialize` (Beta: `meteor add materialize:materialize@=1.0.0-beta`)
+#  Características!
 
-## Documentation
-The documentation can be found at <http://materializecss.com>. To run the documentation locally on your machine, you need [Node.js](https://nodejs.org/en/) installed on your computer.
+  -      Captive Portal GloboPlay para Coleta e análise de dados para captar métricas (KPI) para assim fomentar produtos da Globo fora do país.
 
-### Running documentation locally
-Run these commands to set up the documentation:
 
-```bash
-git clone https://github.com/Dogfalo/materialize
-cd materialize
-npm install
+
+1.	Como funciona
+  -         Tudo começa quando o turista ao ingressar na rede wi-fi de nossos parceiros que estar contemplado com um captive portal que fara o controle de acesso e fornecerá um acesso patrocinado a plataforma do globo play. 
+-	        Assim, a aplicação permitirá à internacionalização do GloboPlay e direcionar quais conteúdos focar no exterior e como tratar esse produto para a audiência local.
+
+
+
+
+
+
+
+
+
+
+### Instalação
+Seguir os passos abaixos: 
+
+  Atualizar CentOS 7:
+```sh
+$ check-update
+$ yum update
+```
+ Desativar firewall por padrão:
+ 
+```sh
+$ systemctl stop firewalld
+$ systemctl disable firewalld
 ```
 
-Then run `grunt monitor` to compile the documentation. When it finishes, open a new browser window and navigate to `localhost:8000`. We use [BrowserSync](https://www.browsersync.io/) to display the documentation.
+Instalar pacotes e dependências
+```sh
+# Tools
+$ yum install wget nano
+```
 
-### Documentation for previous releases
-Previous releases and their documentation are available for [download](https://github.com/Dogfalo/materialize/releases).
+Firewall
+```sh
+$  yum install iptables-services
+```
 
-## Supported Browsers:
-Materialize is compatible with:
+    # FreeRADIUS
+```sh
+$  yum install freeradius freeradius-utils
+```
+ Web Server
+```sh
+$  yum install httpd openssl mod_ssl
+```
 
-- Chrome 35+
-- Firefox 31+
-- Safari 9+
-- Opera
-- Edge
-- IE 11+
+Chillispot Dependências 
+    
+```sh
+$  yum install glibc-devel.i686 glibc-i686 perl-Digest-MD5
+```
+Instalar Chillispot:
+```sh
+$  wget https://raw.githubusercontent.com/zoilomora/captive-portal/master/chillispot-1.1.0.i386.rpm
+```
+```sh
+$   rpm -Uvh chillispot-1.1.0.i386.rpm
+```
 
-## Changelog
-For changelogs, check out [the Releases section of materialize](https://github.com/Dogfalo/materialize/releases) or the [CHANGELOG.md](CHANGELOG.md).
+    
+    Edit the file /etc/chilli.conf and modify the following lines:
 
-## Testing
-We use Jasmine as our testing framework and we're trying to write a robust test suite for our components. If you want to help, [here's a starting guide on how to write tests in Jasmine](CONTRIBUTING.md#jasmine-testing-guide).
+ DNS
+ 
+ ```sh
+   $ dns1 8.8.8.8
+   $ dns2 8.8.4.4
+```
+    
 
-## Contributing
-Check out the [CONTRIBUTING document](CONTRIBUTING.md) in the root of the repository to learn how you can contribute. You can also browse the [help-wanted](https://github.com/Dogfalo/materialize/labels/help-wanted) tag in our issue tracker to find things to do.
+ FreeRADIUS
+```sh
+   $ radiusserver1 127.0.0.1
+   $ radiusserver2 127.0.0.1
+   $ radiussecret secret-password-for-radius
+```
+    
 
-## Copyright and license
-Code Copyright 2018 Materialize. Code released under the MIT license.
+ DHCP
+  
+```sh
+   $   dhcpif eth1
+```
+ Universal access method (UAM) - MUDAR PARA SEU IP 
+ 
+ ```sh
+   $    uamserver https://192.168.0.33/cgi-bin/hotspotlogin.cgi
+   $    uamhomepage https://192.168.0.33/
+   $    uamsecret secret-password-for-uam
+```
+   
+
+Link dicionário de Chillispot para FreeRADIUS
+
+    
+ ```sh
+   $    echo "\$INCLUDE /usr/share/doc/chillispot-1.1.0/dictionary.chillispot">>/etc/raddb/dictionary
+```
+    Copie o script de login e conceda as permissões:
+
+ 
+ ```sh
+    $ cd /var/www/cgi-bin/
+    $ cp /usr/share/doc/chillispot-1.1.0/hotspotlogin.cgi ./hotspotlogin.cgi
+    $ chown apache.apache ./hotspotlogin.cgi
+    $ chmod 700 ./hotspotlogin.cgi
+```
+   Edite o arquivo /var/www/cgi-bin/hotspotlogin.cgi:
+
+   # Descomente as linhas
+    
+    
+```sh
+   $ uamsecret = "secret-password-for-uam";
+   $ userpassword = 1;
+```
+
+
+
+    Copiar pasta HTML_Aplicacao em   /var/www/html/:
+
+
+
+ Ative as regras de firewall do Chillispot:
+
+        Executa regras iptables e está habilitado na memória
+  
+```sh
+   $   /usr/share/doc/chillispot-1.1.0/firewall.iptables
+```
+ The rules persist
+   
+```sh
+  $  service iptables save
+```
+   Ativar encaminhamento de IP:
+
+
+```sh
+  $  echo "net.ipv4.ip_forward = 1" >> /usr/lib/sysctl.d/50-default.conf
+```
+
+
+Aplica as configurações ao sistema   
+    
+```sh
+  $   /sbin/sysctl -p
+```
+
+
+
+Ajuste o segredo compartilhado do FreeRADIUS editando o arquivo /etc/raddb/clients.conf:
+
+    client localhost {
+        # Replace the default password with that of step 5 (radiussecret)
+        secret = secret-password-for-radius
+    }
+
+
+Registre o usuário no FreeRADIUS editando o arquivo  /etc/raddb/users:
+
+Insira uma linha para cada usuário no final do arquivo
+
+    hacka Cleartext-Password := "letgohack"
+
+Check access to FreeRADIUS from console:
+
+    radtest "hacka" "letgohack" 127.0.0.1 0 testando
+
+
+Ative os serviços para que eles iniciem na inicialização:
+
+```sh
+    $ systemctl enable iptables
+    $ systemctl enable httpd
+    $ systemctl enable radiusd
+    $ systemctl enable chilli
+```
+   
+Reinicie o servidor para aplicar e ativar os serviços
+
+   
+
+```sh
+    $  reboot
+```
+
+License
+----
+
+MIT
+
